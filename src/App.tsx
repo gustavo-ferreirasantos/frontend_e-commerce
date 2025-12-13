@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import './App.css'
-import type { ProductData } from './interface/ProductData.ts';
 import {Card} from './components/card/card.tsx'
 import { userProductData } from './hooks/useProductData.ts';
 
