@@ -28,7 +28,7 @@ export function CreateModal({closeModal}: ModalProps){
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState(0);
     const [image, setImage] = useState("");
-    const {mutate, isSuccess, isLoading} = useProductDataMutate();
+    const {mutate, isSuccess, isPending} = useProductDataMutate();
 
 
     const submit = () => {
@@ -38,7 +38,7 @@ export function CreateModal({closeModal}: ModalProps){
             image
         }
 
-        mutate(productData);
+        mutate(productData)
     }
 
 
@@ -58,7 +58,7 @@ export function CreateModal({closeModal}: ModalProps){
                     <Input label="image" value={image} updateValue={setImage}/>
                 </form>
                 <button onClick={submit} className="btn-secondary">
-                    {isLoading ? 'Criando...' : 'Criar'}
+                    {isPending ? 'Criando...' : 'Criar'}
                 </button>
             </div>
         </div>
